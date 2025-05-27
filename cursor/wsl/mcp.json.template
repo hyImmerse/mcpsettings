@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "taskmaster-ai": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "--package=task-master-ai",
+        "task-master-ai"
+      ],
+      "env": {
+        "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY_HERE",
+        "GOOGLE_API_KEY": "YOUR_GOOGLE_API_KEY_HERE"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@smithery-ai/github",
+        "--key",
+        "YOUR_GITHUB_MCP_KEY_HERE",
+        "--profile",
+        "YOUR_GITHUB_MCP_PROFILE_HERE"
+      ]
+    },
+    "puppeteer": {
+      "command": "/root/.nvm/versions/node/v22.13.0/bin/node",
+      "args": [
+        "/root/.nvm/versions/node/v22.13.0/lib/node_modules/@modelcontextprotocol/server-puppeteer/dist/index.js"
+      ],
+      "env": {
+        "PUPPETEER_HEADLESS": "new",
+        "PUPPETEER_EXECUTABLE_PATH": "/usr/bin/google-chrome-stable",
+        "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
+        "PUPPETEER_ARGS": "--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-gpu"
+      }
+    }
+  }
+}
